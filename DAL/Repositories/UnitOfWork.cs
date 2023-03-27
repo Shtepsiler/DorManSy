@@ -15,7 +15,7 @@ namespace DAL.Repositories
     {
         protected readonly MyDbContext databaseContext;
 
-        public IDormitoryRepository _DormitoryRepository { get;  }
+        public IDormitoryRepository _dormitoryRepository { get;  }
         public IFurnitureRepository _furnitureRepository { get;  }
         public IInmateRepository _inmateRepository { get;  }
         public IRoomRepository _roomRepository { get; } 
@@ -36,7 +36,7 @@ namespace DAL.Repositories
        IRoomRepository roomRepository )
         {
             this.databaseContext = databaseContext;
-            _DormitoryRepository = UnitOfWorkRepository;
+            _dormitoryRepository = UnitOfWorkRepository;
             _furnitureRepository = furnitureRepository;
             _inmateRepository = inmateRepository;
             _roomRepository = roomRepository;

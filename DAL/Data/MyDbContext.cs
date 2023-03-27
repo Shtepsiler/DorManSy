@@ -20,10 +20,10 @@ namespace DAL.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-/*            modelBuilder.ApplyConfiguration(new DormintoryConfiguration());
+            modelBuilder.ApplyConfiguration(new DormintoryConfiguration());
             modelBuilder.ApplyConfiguration(new RoomConfiguration());
             modelBuilder.ApplyConfiguration(new FurnitureConfiguration());
-            modelBuilder.ApplyConfiguration(new InmateConfiguration());*/
+            modelBuilder.ApplyConfiguration(new InmateConfiguration());
 
 
         }

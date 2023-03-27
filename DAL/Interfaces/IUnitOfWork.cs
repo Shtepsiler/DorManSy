@@ -6,7 +6,7 @@ namespace DAL.Interfaces
 {
     public interface IUnitOfWork 
     {
-         IDormitoryRepository _DormitoryRepository { get;  }
+         IDormitoryRepository _dormitoryRepository { get;  }
          IFurnitureRepository _furnitureRepository { get;  }
          IInmateRepository _inmateRepository { get;  }
          IRoomRepository _roomRepository { get; }

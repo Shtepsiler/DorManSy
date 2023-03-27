@@ -1,19 +1,19 @@
-﻿
+﻿using DAL.Entity;
 using DAL.Interfaces;
-using DAL.Entity;
+using forum.API.Controllers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace forum.API.Controllers
+namespace WebApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DormintoryController : ControllerBase
+    public class InmateController : ControllerBase
     {
-        private readonly ILogger<DormintoryController> _logger;
+        private readonly ILogger<InmateController> _logger;
 
         private IUnitOfWork _ADOuow;
-        public DormintoryController(ILogger<DormintoryController> logger,
+        public InmateController(ILogger<InmateController> logger,
 
             IUnitOfWork ado_unitofwork)
         {
@@ -22,15 +22,15 @@ namespace forum.API.Controllers
             _ADOuow = ado_unitofwork;
         }
 
-        //GET: api/dormitories
+        //GET: api/events
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Dormitory>>> GetAllEventsAsync()
+        public async Task<ActionResult<IEnumerable<Inmate>>> GetAllEventsAsync()
         {
             try
             {
-                var results = await _ADOuow._dormitoryRepository.GetAsync();
-                
-                _logger.LogInformation($"Отримати усі гуртожитки!");
+                var results = await _ADOuow._inmateRepository.GetAsync();
+
+                _logger.LogInformation($"Отримати усіх жильців!");
                 return Ok(results);
             }
             catch (Exception ex)

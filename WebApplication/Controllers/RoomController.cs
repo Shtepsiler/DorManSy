@@ -1,19 +1,19 @@
-﻿
+﻿using DAL.Entity;
 using DAL.Interfaces;
-using DAL.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace forum.API.Controllers
+namespace WebApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DormintoryController : ControllerBase
+    public class RoomController : ControllerBase
     {
-        private readonly ILogger<DormintoryController> _logger;
+
+        private readonly ILogger<RoomController> _logger;
 
         private IUnitOfWork _ADOuow;
-        public DormintoryController(ILogger<DormintoryController> logger,
+        public RoomController(ILogger<RoomController> logger,
 
             IUnitOfWork ado_unitofwork)
         {
@@ -22,15 +22,15 @@ namespace forum.API.Controllers
             _ADOuow = ado_unitofwork;
         }
 
-        //GET: api/dormitories
+        //GET: api/events
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Dormitory>>> GetAllEventsAsync()
+        public async Task<ActionResult<IEnumerable<Room>>> GetAllEventsAsync()
         {
             try
             {
-                var results = await _ADOuow._dormitoryRepository.GetAsync();
-                
-                _logger.LogInformation($"Отримати усі гуртожитки!");
+                var results = await _ADOuow._roomRepository.GetAsync();
+
+                _logger.LogInformation($"Отримати усіх жильців!");
                 return Ok(results);
             }
             catch (Exception ex)
@@ -41,4 +41,5 @@ namespace forum.API.Controllers
         }
 
     }
+
 }

@@ -28,9 +28,9 @@ namespace forum.API.Controllers
         {
             try
             {
-                var results = await _ADOuow._DormitoryRepository.GetAsync();
+                var results = await _ADOuow._furnitureRepository.GetAsync();
                 
-                _logger.LogInformation($"Отримати усі гуртожитки!");
+                _logger.LogInformation($"Отримати усі меблі!");
                 return Ok(results);
             }
             catch (Exception ex)

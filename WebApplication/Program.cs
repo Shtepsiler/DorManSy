@@ -4,7 +4,7 @@ using DAL.Repositories;
 using System.Data;
 using System.Data.SqlClient;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -16,12 +16,12 @@ builder.Services.AddDbContext<MyDbContext>(options =>
     string connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
     //options.UseSqlServer(connectionString);
 });
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped<IDormitoryRepository, DormitoryRepository>();
 builder.Services.AddScoped<IInmateRepository, InmateRepository>();
 builder.Services.AddScoped<IFurnitureRepository, FurnitureRepository>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
-
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 

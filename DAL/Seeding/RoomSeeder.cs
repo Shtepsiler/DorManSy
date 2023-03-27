@@ -14,9 +14,7 @@ namespace DAL.Seeding
                 Id = 1,
                 Numder = 116,
                 BedsNumder = 2,
-                Payment = 2000,
-                Inmates = new List<Inmate> { new Inmate { Id = 1},new Inmate { Id = 2} },
-                Furnitures = new List<Furniture> { new Furniture {  Id = 1 } }
+                Payment = 2000
 
             }
         };
