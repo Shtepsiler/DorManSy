@@ -1,6 +1,5 @@
 ﻿using DAL.Entity;
 using DAL.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication.Controllers
