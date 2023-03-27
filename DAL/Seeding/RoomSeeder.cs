@@ -14,7 +14,8 @@ namespace DAL.Seeding
                 Id = 1,
                 Numder = 116,
                 BedsNumder = 2,
-                Payment = 2000
+                Payment = 2000,
+                DormintoryId = 1
 
             }
         };
